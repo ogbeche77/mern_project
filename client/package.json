@@ -3,21 +3,22 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "bootstrap": "^4.4.1",
     "cra-template": "1.0.2",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
-    "react-scripts": "3.4.0"
+    "react-scripts": "3.4.0",
+    "react-transition-group": "^4.3.0",
+    "reactstrap": "^8.4.1",
+    "uuid": "^7.0.2"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
-   
   },
   "proxy": "http://localhost:5000",
-  
-
   "eslintConfig": {
     "extends": "react-app"
   },
