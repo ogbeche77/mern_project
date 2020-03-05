@@ -20,7 +20,7 @@ class ShoppingList extends Component {
         this.props.getItems();
     }
     render() {
-        const {items} = this.state;
+        const {items} = this.props.item;
         return(
             <Container>
             <Button color="dark"
