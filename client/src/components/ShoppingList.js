@@ -2,16 +2,18 @@ import React, { Component } from 'react';
 import { Container, ListGroup, ListGroupItem, Button } from 'reactstrap'
 import {CSSTransition, TransitionGroup} from 'react-transition-group';
 import  {v4 as uuidv4} from 'uuid';
+import { connect } from 'react-redux';
+import { getItems } from '../actions/itemActions';
 
 class ShoppingList extends Component {
-    state = {
+   /* state = {
         items: [
             { id: uuidv4(), name:"Soap" },
             { id: uuidv4(), name:"Sink" },
             { id: uuidv4(), name:"Sponge" },
             { id: uuidv4(), name:"Shampoo" }
         ]
-    }
+    }*/
     render() {
         const {items} = this.state;
         return(
@@ -54,4 +56,4 @@ class ShoppingList extends Component {
 
 }
 
-export default ShoppingList;
+export default connect(mapStateToProps, { getItems })(ShoppingList);
