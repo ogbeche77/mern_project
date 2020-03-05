@@ -6,7 +6,7 @@ const initialState = {
         { id: uuidv4(), name:"Soap" },
         { id: uuidv4(), name:"Sink" },
         { id: uuidv4(), name:"Sponge" },
-        { id: uuidv4(), name:"Shampoo" }
+        { id: uuidv4(), name:"ToothBrush" }
     ]
 }
 
