@@ -27,7 +27,7 @@ class ItemModal extends Component {
     onChange = (e) => {
         this.setState({ [e.target.name] : e.target.value });
     }
-    
+
     render() {
         return(
             <div>
@@ -39,7 +39,7 @@ class ItemModal extends Component {
             isOpen={this.state.modal}
             toggle={this.toggle}
             >
-            <ModalHeader toggle={this.toggle}>Add to Dhopping List</ModalHeader>
+            <ModalHeader toggle={this.toggle}>Add to Shopping List</ModalHeader>
              <ModalBody>
              <Form onSubmit={this.onSubmit}>
              <FormGroup>
@@ -51,6 +51,12 @@ class ItemModal extends Component {
              placeholder="Add shopping item"
              onChange={this.onChange}
              />
+             <Button
+             color= "dark"
+             style={{marginTop: "2rem"}}
+             block>
+             Add Item
+             </Button>
              </FormGroup>
              </Form>
              </ModalBody>
