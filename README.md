@@ -30,4 +30,4 @@ Project is: _in progress_.
 
 
 ## Contact
-Created by [@ogbeche77](ogbeche77@yahoo.com) - feel free to contact me!
+Created by [@ogbeche77](ogbeche77@yahoo.com)
