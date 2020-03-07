@@ -33,7 +33,6 @@ class ItemModal extends Component {
         e.preventDefault();
 
         const newItem ={
-            id: uuidv4(),
             name:this.state.name
         }
 
