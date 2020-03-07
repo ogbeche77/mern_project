@@ -13,6 +13,7 @@ import { connect } from 'react-redux';
 import { addItem } from '../actions/itemActions';
 import  {v4 as uuidv4} from 'uuid';
 
+
 class ItemModal extends Component {
     state = {
         modal: false,
@@ -33,8 +34,9 @@ class ItemModal extends Component {
         e.preventDefault();
 
         const newItem ={
+            id: uuidv4(), 
             name:this.state.name
-        }
+        };
 
         //Add item via addItem action
         this.props.addItem(newItem);
