@@ -12,7 +12,10 @@ export const getItems = () => dispatch =>{
 };
 
 export const addItem = item => dispatch =>{
-    axios.post('/api/items', item)
+    return {
+        type:ADD_ITEMS,
+        payload: item
+    };
 };
 
 export const deleteItem = (id) =>{
@@ -27,5 +30,5 @@ export const deleteItem = (id) =>{
 export const setItemsLoading = () => {
     return {
         type: ITEMS_LOADING
-    }
-}
+    };
+};
