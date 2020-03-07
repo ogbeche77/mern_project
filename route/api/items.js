@@ -11,7 +11,7 @@ const Item = require("../../models/Items");
 router.get("/", (req, res)=> {
 Item.find()
 .sort({ date: -1})
-.then(items => res.json(items))
+.then(items => res.json(items));
 });
 
 //actual route is to post request to api/items
