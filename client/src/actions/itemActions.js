@@ -1,22 +1,10 @@
-import axios from 'axios';
-import { GET_ITEMS, ADD_ITEMS, DELETE_ITEMS, ITEMS_LOADING } from './types';
+import { GET_ITEMS, ADD_ITEMS, DELETE_ITEMS } from './types';
 
-export const getItems = () => dispatch =>{
-    dispatch(setItemsLoading());
-    axios.get('/api/items')
-    .then(res => dispatch({
-        type:GET_ITEMS,
-        payload: res.data
-    })
-    )
-};
-
-export const addItem = item => dispatch =>{
+export const getItems = () =>{
     return {
-        type:ADD_ITEMS,
-        payload: item
+        type:GET_ITEMS
+          };
     };
-};
 
 export const deleteItem = (id) =>{
     return {
@@ -25,10 +13,9 @@ export const deleteItem = (id) =>{
     };
 };
 
-
-
-export const setItemsLoading = () => {
+export const addItem = item =>{
     return {
-        type: ITEMS_LOADING
+        type:ADD_ITEMS,
+        payload: item
     };
 };
