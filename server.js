@@ -9,7 +9,7 @@ const app = express(); // initialise express to var app
 //Bodyparser middleware
 app.use(bodyParser.json());
 
-//Database Config
+//Database Config to bring in mongoDB/Mongoose
 const db = require("./config/keys").mongoURI;
 
 //Connect to Mongo
