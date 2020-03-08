@@ -13,12 +13,13 @@ app.use(bodyParser.json());
 const db = require("./config/keys").mongoURI;
 
 //Connect to Mongo
-mongoose.connect(db)
-.then(()=> console.log("MongoDB is connected"))
+mongoose
+.connect(db)
+.then(()=> console.log("MongoDB is connected")) //shows in terminal to show we are connected
 .catch(err => console.log(err));
 
 app.use("./api/items", items);
 
-const port = process.env.PORT || 5000
+const port = process.env.PORT || 5000  //because we may deloy to heroku (process.env.port)
 
 app.listen(port, ()=> console.log(`Server started on port ${port}`));
