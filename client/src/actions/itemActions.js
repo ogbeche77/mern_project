@@ -1,4 +1,4 @@
-import { GET_ITEMS, ADD_ITEMS, DELETE_ITEMS } from './types';
+import { GET_ITEMS, ADD_ITEMS, DELETE_ITEMS, ITEMS_LOADING } from './types';
 
 export const getItems = () =>{
     return {
@@ -19,3 +19,9 @@ export const addItem = item =>{
         payload: item
     };
 };
+
+export const setItemsLoading = () => {
+    return {
+        type: ITEMS_LOADING
+    }
+}
