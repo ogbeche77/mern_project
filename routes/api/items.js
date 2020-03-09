@@ -31,8 +31,8 @@ router.post("/", (req, res)=> {  // making a post request
 //Delete an item
 //Public access since no authentication
 
-router.delete("/:id", (req, res)=> {
-    Item.findById(req.params.id)
+router.delete("/:id", (req, res)=> {  // delete req to delete item
+    Item.findById(req.params.id) //this returns a promise
     .then(item => item.remove().then(()=> res.json({success: true})))
     .catch(err => res.status(404).json({success:false}));
 });
