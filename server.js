@@ -1,7 +1,7 @@
 const express =require("express");
 const mongoose =require("mongoose"); // Mongoose to interact with MONGODB database
 const bodyParser =require("body-parser"); //To post request & get data from the body
-
+const path = require("path");
 const items = require("./routes/api/items");  //We require the route in item.js
 
 const app = express(); // initialise express to var app
@@ -21,6 +21,19 @@ mongoose
 
 //Use Routes
 app.use("/api/items", items); //ensures all requests go to items variable
+
+// Serve static assets if in production
+if(process.env.NODE_ENV ==="production") {
+    //Set static folder
+    app.use(express.static("client/build"));
+
+    app.get("*", (req, res) => {
+        res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
+
+    });
+}
+
+
 
 const port = process.env.PORT || 5000  //because we may deloy to heroku (process.env.port)
 
