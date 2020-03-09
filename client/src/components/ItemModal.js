@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+/*import React, { Component } from 'react';
 import {
     Button,
     Modal,
@@ -91,3 +91,4 @@ const mapStateToProps = state => ({
 });
 
 export default connect(mapStateToProps, {addItem})(ItemModal);
+*/
