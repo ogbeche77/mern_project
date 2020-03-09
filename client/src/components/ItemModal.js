@@ -34,7 +34,6 @@ class ItemModal extends Component {
         e.preventDefault(); // to prevent he actual form submitting
 
         const newItem ={
-            id: uuidv4(), 
             name:this.state.name
         };
 
