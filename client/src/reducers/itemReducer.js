@@ -1,4 +1,4 @@
-import  {v4 as uuidv4} from 'uuid';
+/*import  {v4 as uuidv4} from 'uuid';
 import { GET_ITEMS, ADD_ITEMS, DELETE_ITEMS, ITEMS_LOADING } from '../actions/types';
 
 const initialState = {
@@ -32,3 +32,4 @@ export default function(state = initialState, action) {
                 return state;
     }
 }
+*/
