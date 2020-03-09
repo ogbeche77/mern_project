@@ -4,24 +4,16 @@ import {CSSTransition, TransitionGroup} from 'react-transition-group';
 import  {v4 as uuidv4} from 'uuid';
 import { connect } from 'react-redux';
 import { getItems } from '../actions/itemActions';
-import PropTypes from 'prop-types';
+import PropTypes from 'prop-types'; //component properties should be in proptypes
 
 
 class ShoppingList extends Component {
-    
-    state = {
-        items: [
-            { id: uuidv4(), name:"Soap" },
-            { id: uuidv4(), name:"Sink" },
-            { id: uuidv4(), name:"Sponge" },
-            { id: uuidv4(), name:"Shampoo" }
-        ]
+    componentDidMount(){
+        this.props.getItems();
     }
-
     
-
     render() {
-        const {items} = this.state;
+        const {items} = this.props.item;
         return(
             <Container>	      
             <Button color="dark"	
@@ -67,8 +59,15 @@ class ShoppingList extends Component {
         );
             }
         }
-        
+//items in redux are stored as props
+ShoppingList.propTypes  = {
+    getItems: PropTypes.func.isRequired,
+    item: PropTypes.object.isRequired
+}       
 
+const mapStateToProps =(state) => ({
+    item: state.item
+});
 
-export default(ShoppingList);
+export default connect(mapStateToProps, { getItems })(ShoppingList);
 
