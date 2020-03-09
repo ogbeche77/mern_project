@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react';  //create react component
 import AppNavbar from './components/AppNavbar';
-import ShoppingList from './components/ShoppingList';
+import ShoppingList from './components/ShoppingList'; //inserted into shopping list
 import ItemModal from './components/ItemModal';
 import { Container } from 'reactstrap';
 import { Provider } from 'react-redux';
@@ -20,10 +20,9 @@ class App extends Component {
       <ShoppingList />
       </Container>
       </div>
-      </Provider>
+     </Provider>
     );
   }
 }
   
-
 export default App;
