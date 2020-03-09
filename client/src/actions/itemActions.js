@@ -6,10 +6,10 @@ export const getItems = () =>{
           };
     };
 
-export const deleteItem = (id) =>{
+export const deleteItems = (id) =>{
     return {
         type: DELETE_ITEMS,
-        payload: id
+        payload: id //we send a payload, so id get deleted
     };
 };
 
