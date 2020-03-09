@@ -16,7 +16,7 @@ import  {v4 as uuidv4} from 'uuid';
 
 class ItemModal extends Component {
     state = {
-        modal: false,
+        modal: false, // represents if  odal is open/close
         name: ''
     }
 
@@ -27,11 +27,11 @@ class ItemModal extends Component {
     }
 
     onChange = (e) => {
-        this.setState({ [e.target.name] : e.target.value });
+        this.setState({ [e.target.name] : e.target.value }); // name is setto whatever is types in
     };
 
     onSubmit = e => {
-        e.preventDefault();
+        e.preventDefault(); // to prevent he actual form submitting
 
         const newItem ={
             id: uuidv4(), 
@@ -45,7 +45,6 @@ class ItemModal extends Component {
         this.toggle();
 
     }
-
 
     render() {
         return(
