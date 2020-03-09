@@ -3,7 +3,7 @@ import AppNavbar from './components/AppNavbar';
 import ShoppingList from './components/ShoppingList'; //inserted into shopping list
 import ItemModal from './components/ItemModal';
 import { Container } from 'reactstrap';
-import { Provider } from 'react-redux';
+import { Provider } from 'react-redux'; //in order to bring in store.js
 import store from './store';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
