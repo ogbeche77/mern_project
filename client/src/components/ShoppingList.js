@@ -9,21 +9,21 @@ import PropTypes from 'prop-types';
 
 class ShoppingList extends Component {
     
-   /* state = {
+    state = {
         items: [
             { id: uuidv4(), name:"Soap" },
             { id: uuidv4(), name:"Sink" },
             { id: uuidv4(), name:"Sponge" },
             { id: uuidv4(), name:"Shampoo" }
         ]
-    }*/
+    }
 
     componentDidMount() {
         this.props.getItems();
     }
 
     render() {
-        const {items} = this.props.item;
+        const {items} = this.state;
         return(
             <Container>	      
             <Button color="dark"	
@@ -75,3 +75,4 @@ const mapStateToProps = (state) => ({
 
 export default connect(mapStateToProps, 
     { getItems })(ShoppingList);
+
