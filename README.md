@@ -8,12 +8,14 @@
 * [Contact](#contact)
 
 ## General info
-MERN stack project using ReactJS, Redux, Reactstrap on the front end.  NodeJS & ExpressJS on the backend  to build a BudgetApp and 
+MERN stack project using ReactJS, Redux, Reactstrap on the front end.  NodeJS & ExpressJS on the backend  to build a BudgetApp.
+The APP was deployed via heroku
 
 
 ## Technologies
 * react - version 16.13.0
-* react-redux- version 7.2.0 
+* react-redux- version 7.2.0
+* react-transition-group - version 4.3.0
 * redux - version 4.0.5 
 * react-scripts - version 3.4.0 
 * bootstrap" - version 4.4.1
