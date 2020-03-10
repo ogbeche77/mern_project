@@ -1,13 +1,12 @@
 const express =require("express");
 const mongoose =require("mongoose"); // Mongoose to interact with MONGODB database
-const bodyParser =require("body-parser"); //To post request & get data from the body
 const path = require("path");
   
 
 const app = express(); // initialise express to var app
 
 //Bodyparser middleware
-app.use(bodyParser.json());
+app.use(express.json());
 
 //Database Config to bring in mongoDB/Mongoose
 const db = require("./config/keys").mongoURI;
