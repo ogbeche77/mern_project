@@ -29,6 +29,22 @@ User.findOne({ email })
   bcrypt.compare(password, user.password)
   .then(isMatch =>{
       if(!isMatch) return res.status(400).json({ msg: "invalid crrdentials" });
+      jwt.sign(
+        {id: user.id },
+        config.get("jwtSecret"),
+        { expiresIn: 3600},//token to last for an hour
+         (err, token)=>{
+             if(err) throw err;
+             res.json({
+                 token,
+                user: {
+                    id: user.id,
+                    name:user.name,
+                    email: user.email
+                }
+            });
+         }
+    )
   })          
 })
 });
