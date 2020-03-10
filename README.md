@@ -14,7 +14,8 @@ The APP was deployed via heroku
 
 ## Technologies
 * react - version 16.13.0
-* react-redux- version 7.2.0 
+* react-redux- version 7.2.0
+* react-transition-group - version 4.3.0
 * redux - version 4.0.5 
 * react-scripts - version 3.4.0 
 * bootstrap" - version 4.4.1
