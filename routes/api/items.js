@@ -1,5 +1,6 @@
 const express = require("express");
 const router = express.Router();
+const auth = require("../../middleware/auth");
 
 //Item Model
 const Item = require("../../models/Item"); //we bring in item models
@@ -16,9 +17,9 @@ Item.find() //call find method to fetch all items from the database
 
 //actual route to post request (/api/items)
 //Create an item
-//Public access since no authentication
+//Private with authentication
 
-router.post("/", (req, res)=> {  // making a post request
+router.post("/", auth, (req, res)=> {  // making a post request
     const newItem = new Item ({  //here is the object that is expected in the DB
         name: req.body.name //pass in an object
     });
@@ -29,9 +30,9 @@ router.post("/", (req, res)=> {  // making a post request
 
     //actual route delete request to api/items/:id
 //Delete an item
-//Public access since no authentication
+//Private with authentication
 
-router.delete("/:id", (req, res)=> {  // delete req to delete item
+router.delete("/:id", auth, (req, res)=> {  // delete req to delete item
     Item.findById(req.params.id) //this returns a promise
     .then(item => item.remove().then(()=> res.json({success: true})))
     .catch(err => res.status(404).json({success:false}));
