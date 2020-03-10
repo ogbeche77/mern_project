@@ -1,6 +1,7 @@
 const express =require("express");
 const mongoose =require("mongoose"); // Mongoose to interact with MONGODB database
 const path = require("path");
+const config = require("config");
   
 
 const app = express(); // initialise express to var app
@@ -9,7 +10,7 @@ const app = express(); // initialise express to var app
 app.use(express.json());
 
 //Database Config to bring in mongoDB/Mongoose
-const db = require("./config/keys").mongoURI;
+const db = config.get("mongoURI");
 
 //Connect to Mongo
 mongoose
