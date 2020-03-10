@@ -3,6 +3,7 @@ const router = express.Router();
 const bcrypt = require ("bcryptjs");
 const config = require("config");
 const jwt = require("jsonwebtoken");
+const auth = require("../../middleware/auth");
 
 //User Model
 const Item = require("../../models/User"); //we bring in item models
@@ -43,10 +44,17 @@ User.findOne({ email })
                     email: user.email
                 }
             });
-         }
+          }
     )
   })          
 })
 });
-   
+//actual route is to GET request from api/auth/user
+//Get user data
+//Private
+   router.get("/user", auth, (req, res)=>{
+    User.findById(req.user.id)
+    .select("-password")
+    .then(user=> res.json(user));
+   });
 module.exports = router;
