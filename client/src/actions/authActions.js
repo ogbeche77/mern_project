@@ -1,4 +1,5 @@
 import axios from "axios";
+import { returnErrors } from "./errorActions";
 
 import {
     USER_LOADED,
@@ -34,9 +35,10 @@ if(token) {
         type: USER_LOADED,
         payload: res.data
     }))
-    .catch()err=> {
+    .catch(err=> {
+        dispatch(returnErrors);
         dispatch({
             type: AUTH_ERROR
         });
-    };
+    });
 }
