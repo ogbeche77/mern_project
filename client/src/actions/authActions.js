@@ -3,7 +3,7 @@ import { returnErrors } from "./errorActions";
 
 import {
     USER_LOADED,
-    USER_LOADIND,
+    USER_LOADING,
     AUTH_ERROR,
     LOGIN_SUCCESS,
     LOGIN_FAIL,
