@@ -36,7 +36,7 @@ if(token) {
         payload: res.data
     }))
     .catch(err=> {
-        dispatch(returnErrors);
+        dispatch(returnErrors(err.response.data, err.response.status));
         dispatch({
             type: AUTH_ERROR
         });
