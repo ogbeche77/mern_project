@@ -9,6 +9,7 @@ import {
     NavLink,
     Container 
 } from 'reactstrap';
+import RegisterModal from './auth/RegisterModal';
 
 class AppNavbar extends Component {
     state ={
@@ -31,7 +32,7 @@ render() {
     <Collapse isOpen={this.state.isOpen} navbar>
     <Nav className="ml-auto" navbar>
     <NavItem>
-    <NavLink href="https//google.com">Google</NavLink>
+    <NavLink> <RegisterModal/> </NavLink>
     </NavItem>
     </Nav>
     </Collapse>
