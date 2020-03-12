@@ -19,7 +19,7 @@ import { clearErrors } from '../../actions/errorActions';
 
 class LoginModal extends Component {
     state = {
-        modal: false, // represents if  odal is open/close
+        modal: false, 
         email: '',
         password: '',
         msg: null
