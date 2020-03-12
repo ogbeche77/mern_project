@@ -30,6 +30,20 @@ export const loadUser = () => (dispatch, getState) => {
         });
     });
 }
+// Register User
+export const register =({ name, email,password}) => dispatch => {
+   
+   //Headers
+    const config = {
+        headers: {
+            "Content-Type" : "application/json"
+        }
+    }
+
+    // Request body
+const body = JSON.stringify({ name, email, password })
+
+}
 
 
 //Setup config/headers and token
