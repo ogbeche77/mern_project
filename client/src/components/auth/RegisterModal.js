@@ -8,7 +8,8 @@ import {
     FormGroup,
     Label,
     Input,
-    NavLink
+    NavLink,
+    Alert
 } from 'reactstrap';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
@@ -29,6 +30,18 @@ class RegisterModal extends Component {
         error: PropTypes.object.isRequired,
         register: PropTypes.func.isRequired
     };
+
+    componentDidUpdate(prevprops) {
+        const { error } = this.props;
+        if(error !== prevprops.error) {
+            //check for register error
+            if(error.id === "REGISTER_FAIL"){
+                this.setState({ msg:error.msg.msg});
+            }elese{
+                this.setState({ msg: null});
+            }
+        }
+    }
 
     toggle = () => {
         this.setState({
