@@ -54,18 +54,37 @@ class RegisterModal extends Component {
             isOpen={this.state.modal}
             toggle={this.toggle}
             >
-            <ModalHeader toggle={this.toggle}>Add to Shopping List</ModalHeader>
+            <ModalHeader toggle={this.toggle}>Register</ModalHeader>
              <ModalBody>
              <Form onSubmit={this.onSubmit}>
              <FormGroup>
-             <Label for ="item">Item</Label>
+             <Label for ="name">Name</Label>
              <Input
              type="text"
              name="name"
-             id="item"
-             placeholder="Add shopping item"
+             id="name"
+             placeholder="Name"
              onChange={this.onChange}
              />
+
+             <Label for ="name">Name</Label>
+             <Input
+             type="text"
+             name="name"
+             id="name"
+             placeholder="Name"
+             onChange={this.onChange}
+             />
+
+             <Label for ="name">Name</Label>
+             <Input
+             type="text"
+             name="name"
+             id="name"
+             placeholder="Name"
+             onChange={this.onChange}
+             />
+             
              <Button
              color= "dark"
              style={{marginTop: "2rem"}}
