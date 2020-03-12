@@ -37,6 +37,9 @@ render() {
     const authLinks =(
         <Fragment>
         <NavItem>
+        <span className ="navbar-text mr-3">
+        <strong> {user ? `Welcome ${user.name}`  : " "}</strong>
+        </span>
     <Logout/></NavItem>
         </Fragment>
     );
@@ -44,18 +47,12 @@ render() {
     const guestLinks = (
         <Fragment>
         <NavItem>
-        <span className ="navbar-text mr-3">
-        <strong> {user ? `Welcome ${user.name}`  : " "}</strong>
-        </span>
-        </NavItem>
-        <NavItem>
     <RegisterModal />
     </NavItem>
     <NavItem>
     <LoginModal />
     </NavItem>
-        
-        </Fragment>
+          </Fragment>
     )
 
     return (
