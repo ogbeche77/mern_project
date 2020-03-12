@@ -54,7 +54,14 @@ axios.post("/api/users", body, config)
     });
 });
 
-}
+};
+
+//Logout User
+export const logout = () => {
+    return{
+        type: LOGOUT_SUCCESS
+    };
+};
 
 
 //Setup config/headers and token
