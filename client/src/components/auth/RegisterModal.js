@@ -37,7 +37,7 @@ class RegisterModal extends Component {
             //check for register error
             if(error.id === "REGISTER_FAIL"){
                 this.setState({ msg:error.msg.msg});
-            }elese{
+            }else{
                 this.setState({ msg: null});
             }
         }
@@ -81,6 +81,8 @@ this.props.register(newUser);
             >
             <ModalHeader toggle={this.toggle}>Register</ModalHeader>
              <ModalBody>
+             { this.state.msg ? (<Alert color="danger">{ this.state.msg}</Alert>
+             ) : null}
              <Form onSubmit={this.onSubmit}>
              <FormGroup>
              <Label for ="name">Name</Label>
