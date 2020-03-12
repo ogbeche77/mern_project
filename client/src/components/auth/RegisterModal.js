@@ -7,7 +7,8 @@ import {
     Form,
     FormGroup,
     Label,
-    Input
+    Input,
+    NavLink
 } from 'reactstrap';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
@@ -46,10 +47,9 @@ class RegisterModal extends Component {
     render() {
         return(
             <div>
-            <Button color="dark" style={{marginBottom: "2rem"}}
-            onClick={this.toggle}
-            >Add Item</Button>
-
+            <NavLink onClick={this.toggle} href="#">
+            Register
+            </NavLink>
             <Modal
             isOpen={this.state.modal}
             toggle={this.toggle}
