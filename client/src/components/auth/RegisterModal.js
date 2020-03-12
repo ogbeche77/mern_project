@@ -10,14 +10,19 @@ import {
     Input
 } from 'reactstrap';
 import { connect } from 'react-redux';
-
-/*import  {v4 as uuidv4} from 'uuid';*/
-
-
-class ItemModal extends Component {
+import PropTypes from 'prop-types';
+class RegisterModal extends Component {
     state = {
         modal: false, // represents if  odal is open/close
-        name: ''
+        name: '',
+        email: '',
+        password: '',
+        msg: null
+    };
+
+    static propTypes ={
+        isAuthenticated: PropTypes.bool,
+        error: PropTypes.object.isRequired
     }
 
     toggle = () => {
@@ -85,7 +90,8 @@ class ItemModal extends Component {
 }
 
 const mapStateToProps = state => ({
-    item:state.item
+    isAuthenticated:state.auth.isAuthenticated,
+    error: state.error
 });
 
-export default connect(mapStateToProps, {addItem})(ItemModal);
+export default connect(mapStateToProps, {})(RegisterModal);
