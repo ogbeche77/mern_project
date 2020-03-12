@@ -1,13 +1,20 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
+import {NavLink} from 'reactstrap';
 import { connect } from 'react-redux';
 import { logout } from '../../actions/authActions';
+import { NavLink } from 'reactstrap';
+import PropTypes from 'prop-types';
 
 export class Logout extends Component {
+    static proptypes = {
+        logout: PropTypes.func.isRequired
+    };
     render() {
         return (
-            <div>
-                
-            </div>
+           <Fragment>
+           <NavLink onClick={this.props.logout} href="#">
+           </NavLink>
+           </Fragment>
         )
     }
 }
