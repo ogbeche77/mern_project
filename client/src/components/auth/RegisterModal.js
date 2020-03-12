@@ -67,29 +67,29 @@ class RegisterModal extends Component {
              onChange={this.onChange}
              />
 
-             <Label for ="name">Name</Label>
+             <Label for ="email">Email</Label>
              <Input
-             type="text"
-             name="name"
-             id="name"
-             placeholder="Name"
+             type="email"
+             name="email"
+             id="email"
+             placeholder="Email"
              onChange={this.onChange}
              />
 
-             <Label for ="name">Name</Label>
+             <Label for ="password">Password</Label>
              <Input
-             type="text"
-             name="name"
-             id="name"
-             placeholder="Name"
+             type="password"
+             name="password"
+             id="password"
+             placeholder="Password"
              onChange={this.onChange}
              />
-             
+
              <Button
              color= "dark"
              style={{marginTop: "2rem"}}
              block>
-             Add Item
+             Register
              </Button>
              </FormGroup>
              </Form>
