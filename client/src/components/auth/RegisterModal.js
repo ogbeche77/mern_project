@@ -38,13 +38,6 @@ class RegisterModal extends Component {
     onSubmit = e => {
         e.preventDefault(); // to prevent he actual form submitting
 
-        const newItem ={
-            name:this.state.name
-        };
-
-        //Add item via addItem action
-        this.props.addItem(newItem);
-
         //Close modal
         this.toggle();
 
