@@ -8,7 +8,7 @@
 * [Contact](#contact)
 
 ## General info
-MERN stack project using ReactJS, Redux, Reactstrap on the front end.  NodeJS & ExpressJS on the backend  to build a BudgetApp.
+MERN stack project using ReactJS, Redux, Reactstrap on the front end.  NodeJS & ExpressJS on the backend  to build a BudgetApp. Login Authentication was implememted with JSON web token and also ReactJS register modal
 The APP was deployed via heroku
 
 
