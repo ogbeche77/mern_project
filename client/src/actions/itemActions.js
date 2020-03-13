@@ -25,6 +25,8 @@ export const getItems = () => dispatch => {
 
         })
         )
+        .catch(err => dispatch(returnErrors(err.response.data, err.response.status))
+         );
     };
 
 export const deleteItems = id => dispatch =>{
@@ -34,6 +36,8 @@ export const deleteItems = id => dispatch =>{
         payload: id
     })
     )
+    .catch(err => dispatch(returnErrors(err.response.data, err.response.status))
+         );
 };
 
 
