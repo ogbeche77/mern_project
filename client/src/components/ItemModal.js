@@ -11,6 +11,7 @@ import {
 } from 'reactstrap';
 import { connect } from 'react-redux';
 import { addItem } from '../actions/itemActions';
+import PropTypes from 'prop-types';
 /*import  {v4 as uuidv4} from 'uuid';*/
 
 
@@ -85,7 +86,8 @@ class ItemModal extends Component {
 }
 
 const mapStateToProps = state => ({
-    item:state.item
+    item:state.item,
+    isAuthenticated: state.auth.isAuthenticated
 });
 
 export default connect(mapStateToProps, {addItem})(ItemModal);
