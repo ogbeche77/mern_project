@@ -15,9 +15,9 @@ export const getItems = () => dispatch => {
          );
     };
 
-    export const addItem = item => dispatch =>{
+    export const addItem = item => (dispatch, getState) =>{
        axios
-       .post("/api/items", item )
+       .post("/api/items", item, tokenConfig(getState))
        .then(res => 
         dispatch({
             type: ADD_ITEMS,
@@ -29,8 +29,8 @@ export const getItems = () => dispatch => {
          );
     };
 
-export const deleteItems = id => dispatch =>{
-   axios.delete(`/api/items/${id}`).then(res =>
+export const deleteItems = id => (dispatch, getState) =>{
+   axios.delete(`/api/items/${id}`, tokenConfig(getState)).then(res =>
     dispatch({
         type: DELETE_ITEMS,
         payload: id
@@ -39,8 +39,6 @@ export const deleteItems = id => dispatch =>{
     .catch(err => dispatch(returnErrors(err.response.data, err.response.status))
          );
 };
-
-
 
 export const setItemsLoading = () => {
     return {
