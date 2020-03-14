@@ -32,10 +32,10 @@ User.findOne({ email })
     }); 
     
     // Salt created and hashed
-    bcrypt.genSalt(10,(err, salt)=> {
+    bcrypt.genSalt(10,(err, salt)=> { //defult is 10, can be higher num
         bcrypt.hash(newUser.password, salt, (err, hash) =>{
             if(err) throw err;
-            newUser.password = hash;
+            newUser.password = hash; //password saved from plain text to hash
             newUser.save()
             .then(user=> {
                 jwt.sign(
@@ -47,7 +47,7 @@ User.findOne({ email })
                          res.json({
                              token,
                             user: {
-                                id: user.id,
+                                id: user.id,  //id, name & email is sent back
                                 name:user.name,
                                 email: user.email
                             }
