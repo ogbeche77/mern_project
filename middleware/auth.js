@@ -1,3 +1,4 @@
+//middleware for private route that are accesed by our webtoken
 const config = require("config");
 const jwt = require("jsonwebtoken");
 
