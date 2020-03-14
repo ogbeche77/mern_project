@@ -54,7 +54,7 @@ User.findOne({ email })
 //Private
    router.get("/user", auth, (req, res)=>{
     User.findById(req.user.id)
-    .select("-password")
-    .then(user=> res.json(user));
+    .select("-password") // should return user, id but not password
+    .then(user=> res.json(user)); //returns the promise & the user
    });
 module.exports = router;
