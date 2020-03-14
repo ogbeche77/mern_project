@@ -12,7 +12,7 @@ export default function(state = initialState, action) {
         case GET_ITEMS:
             return {
                 ...state,
-                items: action.payload,
+                items: action.payload,  
                 loading: false
                
             };
