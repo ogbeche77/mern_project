@@ -37,10 +37,10 @@ class ItemModal extends Component {
     };
 
     onSubmit = e => {
-        e.preventDefault(); // to prevent he actual form submitting
+        e.preventDefault(); // to prevent the actual form submitting
 
         const newItem ={
-            name:this.state.name
+            name:this.state.name //state.name is update when we type in input
         };
 
         //Add item via addItem action
