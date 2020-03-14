@@ -18,12 +18,12 @@ import {
 
   export default function(state = initialState, action){
       switch(action.type){
-          case USER_LOADING:
+          case USER_LOADING: //point of getting user from backend to getting the user
               return{
                   ...state,
                   isLoading: true
               };
-              case USER_LOADED:
+              case USER_LOADED: //will run always to check whether user is logged in
                   return{
                       ...state,
                       isAuthenticated: true,
@@ -40,6 +40,7 @@ import {
                         isAuthenticated: true,
                         isLoading: false   
                     };
+                    //should any of the cases below occur, it should retutn {}
                     case AUTH_ERROR:
                      case LOGIN_FAIL:
                      case LOGOUT_SUCCESS:
