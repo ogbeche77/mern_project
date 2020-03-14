@@ -13,12 +13,11 @@ import {
 } from "./types";
 
 //Check token & load user
-export const loadUser = () => (dispatch, getState) => {
+export const loadUser = () => (dispatch, getState) => { //bcos its asyncronous, we use dispatch
     // User loading
     dispatch({ type: USER_LOADING });
 
-
-    axios.get("/api/auth/user", tokenConfig(getState))
+    axios.get("/api/auth/user", tokenConfig(getState)) //fetch user
     .then(res => dispatch({
         type: USER_LOADED,
         payload: res.data
