@@ -1,4 +1,4 @@
-/*import  {v4 as uuidv4} from 'uuid';*/
+// The reducer is where item state goes
 import { GET_ITEMS, ADD_ITEMS, DELETE_ITEMS, ITEMS_LOADING } from '../actions/types';
 
 const initialState = {
