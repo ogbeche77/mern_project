@@ -97,7 +97,6 @@ export const tokenConfig = getState => {
     //Get token from localstorage
 const token = getState().auth.token;
 
-
 // Headers
 const config ={
     headers: {
@@ -107,7 +106,7 @@ const config ={
 
 //If token, add to headers
 if(token) {
-    config.headers["x-auth-token"] = token;
+    config.headers["x-auth-token"] = token; //set to token in local storage
 }
 
 return config;
