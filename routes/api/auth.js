@@ -29,7 +29,7 @@ User.findOne({ email })
   //Validating password
   bcrypt.compare(password, user.password)
   .then(isMatch =>{
-      if(!isMatch) return res.status(400).json({ msg: "invalid crrdentials" });
+      if(!isMatch) return res.status(400).json({ msg: "invalid credentials" }); //if password doesn't match, return 404
       jwt.sign(
         {id: user.id },
         config.get("jwtSecret"),
