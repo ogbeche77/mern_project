@@ -6,7 +6,7 @@ const config = require("config");
 
 const app = express(); // initialise express to var app
 
-//Bodyparser middleware
+// Formerly bodyparser middleware
 app.use(express.json());
 
 //Database Config to bring in mongoDB/Mongoose
