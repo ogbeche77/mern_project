@@ -18,7 +18,7 @@ static propTypes  = {
     componentDidMount(){
         this.props.getItems();
     }
-    onDeleteClick = (id) => {
+    onDeleteClick = (id) => {   // methods to delete item is called
         this.props.deleteItems(id);
     };
     
@@ -35,7 +35,7 @@ static propTypes  = {
                     className ="remove-btn"
                     color="danger"
                     size="sm"
-                    onClick={this.onDeleteClick.bind(this, _id)}
+                    onClick={this.onDeleteClick.bind(this, _id)} //onclick, button passed id & calls method above
                     >
                     &times;
                     </Button> ) : null }
