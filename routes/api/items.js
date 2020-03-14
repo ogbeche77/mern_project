@@ -19,7 +19,7 @@ Item.find() //call find method to fetch all items from the database
 //Create an item
 //Private with authentication
 
-router.post("/", auth, (req, res)=> {  // making a post request
+router.post("/", auth, (req, res)=> {  // To protect post request, we add auth parameter
     const newItem = new Item ({  //here is the object that is expected in the DB
         name: req.body.name //pass in an object
     });
@@ -32,7 +32,7 @@ router.post("/", auth, (req, res)=> {  // making a post request
 //Delete an item
 //Private with authentication
 
-router.delete("/:id", auth, (req, res)=> {  // delete req to delete item
+router.delete("/:id", auth, (req, res)=> {  // // To protect delete request, we also add auth parameter
     Item.findById(req.params.id) //this returns a promise
     .then(item => item.remove().then(()=> res.json({success: true})))
     .catch(err => res.status(404).json({success:false}));
