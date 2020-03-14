@@ -12,7 +12,7 @@ const User = require("../../models/User"); //we bring in item models
 //Public access
 
 router.post("/", (req, res)=> {
-const {name, email, password} = req.body;
+const {name, email, password} = req.body; //destructring in order to get data in res.body
 
 
 //Validation
