@@ -26,6 +26,7 @@ class RegisterModal extends Component {
         msg: null
     };
 
+    //Set proptypes
     static propTypes ={
         isAuthenticated: PropTypes.bool,
         error: PropTypes.object.isRequired,
