@@ -7,9 +7,9 @@ export const getItems = () => dispatch => {
     dispatch(setItemsLoading()); // calling setItemsLoading
     axios.get("/api/items")  //we make our request to the backend, proxy added already in package.json
     .then(res =>
-         dispatch({
+         dispatch({  // response/ promise 
              type: GET_ITEMS,
-             payload: res.data
+             payload: res.data  //data that comes from the backend, when we hit the route so it returns json format
          }))
          .catch(err => dispatch(returnErrors(err.response.data, err.response.status))
          );
