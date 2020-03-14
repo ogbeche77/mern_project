@@ -1,3 +1,4 @@
+// Item modal to add items
 import React, { Component } from 'react';
 import {
     Button,
@@ -9,7 +10,7 @@ import {
     Label,
     Input
 } from 'reactstrap';
-import { connect } from 'react-redux';
+import { connect } from 'react-redux'; // bcos we ll use redux
 import { addItem } from '../actions/itemActions';
 import PropTypes from 'prop-types';
 /*import  {v4 as uuidv4} from 'uuid';*/
@@ -17,7 +18,7 @@ import PropTypes from 'prop-types';
 
 class ItemModal extends Component {
     state = {
-        modal: false, // represents if  odal is open/close
+        modal: false, // represents if  modal is open/close
         name: ''
     };
 
@@ -32,7 +33,7 @@ class ItemModal extends Component {
     }
 
     onChange = (e) => {
-        this.setState({ [e.target.name] : e.target.value }); // name is setto whatever is types in
+        this.setState({ [e.target.name] : e.target.value }); // name is set to whatever is typed in, in this case, e.target.value
     };
 
     onSubmit = e => {
