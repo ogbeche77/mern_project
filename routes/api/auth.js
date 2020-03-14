@@ -3,7 +3,7 @@ const router = express.Router();
 const bcrypt = require ("bcryptjs");
 const config = require("config");
 const jwt = require("jsonwebtoken");
-const auth = require("../../middleware/auth");
+const auth = require("../../middleware/auth"); //ensures user is validated when they login
 
 //User Model
 const Item = require("../../models/User"); //we bring in item models
