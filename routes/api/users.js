@@ -16,13 +16,13 @@ const {name, email, password} = req.body; //destructring in order to get data in
 
 
 //Validation
-if(!name || !email || !password) {
+if(!name || !email || !password) { //if none of this values are present, response ll be 404
     return res.status(400).json({ msg: "Please enter all fields"});
 }
 
 //Check if user exists
 User.findOne({ email })
-.then(user => {
+.then(user => {  //to check if user already exist
     if(user) return res.status(400).json({ msg: "User already exist"});
      
     const newUser = new User({ 
