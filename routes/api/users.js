@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const bcrypt = require ("bcryptjs");
+const bcrypt = require ("bcryptjs"); // to encrypt password
 const config = require("config");
 const jwt = require("jsonwebtoken");
 
@@ -25,7 +25,7 @@ User.findOne({ email })
 .then(user => {  //to check if user already exist
     if(user) return res.status(400).json({ msg: "User already exist"});
      
-    const newUser = new User({ 
+    const newUser = new User({  //if user doesn't exist, new user is created
         name,
         email,
         password
