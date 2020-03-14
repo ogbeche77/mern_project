@@ -34,9 +34,9 @@ class RegisterModal extends Component {
         clearErrors: PropTypes.func.isRequired
     };
 
-    componentDidUpdate(prevprops) {
+    componentDidUpdate(prevprops) { 
         const { error, isAuthenticated } = this.props;
-        if(error !== prevprops.error) {
+        if(error !== prevprops.error) { //to check of nothing changed
             //check for register error
             if(error.id === "REGISTER_FAIL"){
                 this.setState({ msg:error.msg.msg});
