@@ -4,8 +4,8 @@ import { tokenConfig } from './authActions';
 import { returnErrors } from './errorActions';
 
 export const getItems = () => dispatch => {
-    dispatch(setItemsLoading());
-    axios.get("/api/items")
+    dispatch(setItemsLoading()); // calling setItemsLoading
+    axios.get("/api/items")  //we make our request to the backend, proxy added already in package.json
     .then(res =>
          dispatch({
              type: GET_ITEMS,
