@@ -28,7 +28,7 @@ static propTypes  = {
             <Container>	      
             <ListGroup>
             <TransitionGroup className="shopping-list">
-            {items.map(({ _id, name})=> (
+            {items.map(({ _id, name})=> ( // all id changed to _id bcos item is now coming from MongoDB
                 <CSSTransition key={_id} timeout={500} classNames="fade">
                 <ListGroupItem>
                 { this.props. isAuthenticated ? (  <Button
