@@ -1,5 +1,5 @@
 {
-    "mongoURI": "mongodb+srv://ogbeche77:zidane77@kazeem-wx87j.mongodb.net/test?retryWrites=true&w=majority",
+    "mongoURI": "Insert MONGO_URL",
 "jwtSecret": "sl_mysecret"
 
 }
