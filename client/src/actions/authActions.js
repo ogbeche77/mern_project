@@ -33,14 +33,14 @@ export const loadUser = () => (dispatch, getState) => { //bcos its asyncronous, 
 export const register =({ name, email,password}) => dispatch => {
    
    //Headers
-    const config = {
+    const config = { // json value to server
         headers: {
             "Content-Type" : "application/json"
         }
     }
 
     // Request body
-const body = JSON.stringify({ name, email, password })
+const body = JSON.stringify({ name, email, password }) // turn a javascript objaect to JSON
 axios.post("/api/users", body, config)
 .then(res => dispatch({
     type: REGISTER_SUCCESS,
