@@ -45,7 +45,7 @@ import {
                      case LOGIN_FAIL:
                      case LOGOUT_SUCCESS:
                      case REGISTER_FAIL:
-                         localStorage.removeItem("token");
+                         localStorage.removeItem("token");  //if any of the above happens, localstorage is removed
                          return {
                              ...state,
                              token: null,
