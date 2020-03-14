@@ -1,7 +1,7 @@
 const express =require("express");
 const mongoose =require("mongoose"); // Mongoose to interact with MONGODB database
 const path = require("path");
-const config = require("config");
+const config = require("config"); // To hide the MongoDB keys
   
 
 const app = express(); // initialise express to var app
