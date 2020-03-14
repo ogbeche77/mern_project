@@ -26,11 +26,11 @@ class AppNavbar extends Component {
 
         toggle = () =>{ 
             this.setState({
-            isOpen: !this.state.isOpen //change isOpen to whatever is not
+            isOpen: !this.state.isOpen //change isOpen to whatever is not, so we can toggle
     });
 }
 
-//standard bootstrap attributes
+//using standard bootstrap attributes in react
 render() { 
     const { isAuthenticated, user } = this.props.auth;
 
