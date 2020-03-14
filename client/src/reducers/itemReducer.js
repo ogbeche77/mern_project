@@ -3,7 +3,7 @@ import { GET_ITEMS, ADD_ITEMS, DELETE_ITEMS, ITEMS_LOADING } from '../actions/ty
 
 const initialState = {
     items: [],
-    loading: false //initially to first
+    loading: false //should be boolean, initially set to first
    
 };
 
