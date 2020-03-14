@@ -23,7 +23,7 @@ export default function(state = initialState, action) {
                 };
             case ADD_ITEMS:
                 return{
-                    ...state,
+                    ...state, //spread operator ... is used to get current state
                     items: [action.payload, ...state.items]
                 }; 
                 case ITEMS_LOADING:
