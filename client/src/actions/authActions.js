@@ -23,7 +23,7 @@ export const loadUser = () => (dispatch, getState) => { //bcos its asyncronous, 
         payload: res.data
     }))
     .catch(err=> {
-        dispatch(returnErrors(err.response.data, err.response.status));
+        dispatch(returnErrors(err.response.data, err.response.status));// returns the message & status
         dispatch({
             type: AUTH_ERROR
         });
