@@ -1,9 +1,9 @@
 const express = require("express");
-const router = express.Router();
+const router = express.Router(); //create router var & set to router object (express.Router)
 const auth = require("../../middleware/auth");
 
 //Item Model
-const Item = require("../../models/Item"); //we bring in item models
+const Item = require("../../models/Item"); //we bring in item models to make queries
 
 //actual route is to GET request from api/items
 //Get all Items
@@ -38,4 +38,4 @@ router.delete("/:id", auth, (req, res)=> {  // delete req to delete item
     .catch(err => res.status(404).json({success:false}));
 });
    
-module.exports = router;
+module.exports = router; // necessasy, so other files can read the content of this file
