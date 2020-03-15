@@ -95,7 +95,7 @@ class ItemModal extends Component {
 
 const mapStateToProps = state => ({
     item:state.item,
-    isAuthenticated: state.auth.isAuthenticated
+    isAuthenticated: state.auth.isAuthenticated //ensures item is only displayed after user login
 });
 
 export default connect(mapStateToProps, {addItem})(ItemModal);
