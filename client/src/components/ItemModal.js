@@ -52,8 +52,8 @@ class ItemModal extends Component {
     }
 
     render() {
-        return(
-            <div>
+        return( //ensures item is only displayed after user login
+            <div> 
             { this.props.isAuthenticated ?  <Button color="dark" style={{marginBottom: "2rem"}}
             onClick={this.toggle}
             >Add Item
