@@ -15,7 +15,7 @@ export const getItems = () => dispatch => {
          );
     };
 
-    export const addItem = item => (dispatch, getState) =>{
+    export const addItem = item => (dispatch, getState) =>{ //getState get passed to the token config
        axios
        .post("/api/items", item, tokenConfig(getState))
        .then(res => 
