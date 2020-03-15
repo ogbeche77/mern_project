@@ -9,6 +9,7 @@ import {
     NavLink,
     Container 
 } from 'reactstrap';
+// all items that is to be displayed in the navbar is brought in
 import { connect } from 'react-redux';
 import propTypes from 'prop-types';
 import RegisterModal from './auth/RegisterModal';
