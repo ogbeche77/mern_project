@@ -29,7 +29,7 @@ export const getItems = () => dispatch => {
          );
     };
 
-export const deleteItems = id => (dispatch, getState) =>{
+export const deleteItems = id => (dispatch, getState) =>{ //getState get passed to the token config
    axios.delete(`/api/items/${id}`, tokenConfig(getState)).then(res =>
     dispatch({
         type: DELETE_ITEMS,
