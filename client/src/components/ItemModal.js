@@ -56,9 +56,9 @@ class ItemModal extends Component {
             <div> 
             { this.props.isAuthenticated ?  <Button color="dark" style={{marginBottom: "2rem"}}
             onClick={this.toggle}
-            >Add Item
+            >Add Players
             
-            </Button> : <h4 className="mb-3 ml-4"> Please login to manage items</h4>}
+            </Button> : <h4 className="mb-3 ml-4"> Please login to manage team</h4>}
            
 
             <Modal
@@ -81,7 +81,7 @@ class ItemModal extends Component {
              color= "dark"
              style={{marginTop: "2rem"}}
              block>
-             Add Item
+             Add Players
              </Button>
              </FormGroup>
              </Form>
