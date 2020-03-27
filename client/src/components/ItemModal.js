@@ -74,7 +74,7 @@ class ItemModal extends Component {
              type="text"
              name="name"
              id="item"
-             placeholder="Add shopping item"
+             placeholder="Add Players To List"
              onChange={this.onChange}
              />
              <Button
