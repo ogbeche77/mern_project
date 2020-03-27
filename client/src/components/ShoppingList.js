@@ -33,7 +33,7 @@ static propTypes  = {
                 <ListGroupItem>
                 { this.props. isAuthenticated ? (  <Button
                     className ="remove-btn"
-                    color=""
+                    color="warning"
                     size="sm"
                     onClick={this.onDeleteClick.bind(this, _id)} //onclick, button passed id & calls method above
                     >
