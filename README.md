@@ -28,7 +28,7 @@ IDE used was Visual Studio Code and project server side was first implemented on
 All necessary dependencies were installed, as seen in package.json
 
 ## Status
-Project is: _in progress_. 
+Project is:completed & delopyed 
 
 
 ## Contact
