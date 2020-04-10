@@ -7,7 +7,7 @@ import {
   Nav,
   NavItem,
   NavLink,
-  Container
+  Container,
 } from "reactstrap";
 // all items that is to be displayed in the navbar is brought in
 import { connect } from "react-redux";
@@ -17,16 +17,16 @@ import LoginModal from "./auth/LoginModal";
 import Logout from "./auth/Logout";
 class AppNavbar extends Component {
   state = {
-    isOpen: false
+    isOpen: false,
   };
 
   static propTypes = {
-    auth: propTypes.object.isRequired
+    auth: propTypes.object.isRequired,
   };
 
   toggle = () => {
     this.setState({
-      isOpen: !this.state.isOpen //change isOpen to whatever is not, so we can toggle
+      isOpen: !this.state.isOpen, //change isOpen to whatever is not, so we can toggle
     });
   };
 
@@ -74,8 +74,8 @@ class AppNavbar extends Component {
     );
   }
 }
-const mapStateToProps = state => ({
-  auth: state.auth
+const mapStateToProps = (state) => ({
+  auth: state.auth,
 });
 
 export default connect(mapStateToProps, null)(AppNavbar);
