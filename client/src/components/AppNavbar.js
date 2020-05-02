@@ -34,7 +34,7 @@ class AppNavbar extends Component {
   render() {
     const { isAuthenticated, user } = this.props.auth;
 
-    //span also displays welcome message
+    //This displays welcome message
     const authLinks = (
       <Fragment>
         <NavItem>
