@@ -40,12 +40,12 @@ import {
                         isAuthenticated: true,
                         isLoading: false   
                     };
-                    //should any of the cases below occur, it should retutn {}
+                    //should any of the cases below occur, it should return {}
                     case AUTH_ERROR:
                      case LOGIN_FAIL:
                      case LOGOUT_SUCCESS:
                      case REGISTER_FAIL:
-                         localStorage.removeItem("token");  //if any of the above happens, localstorage is removed
+                         localStorage.removeItem("token");  //if any of the above happens, localstorage becomes inactive
                          return {
                              ...state,
                              token: null,
