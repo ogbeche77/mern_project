@@ -9,7 +9,7 @@
 
 ## General info
 MERN stack project using ReactJS, Redux, Reactstrap on the front end.  NodeJS & ExpressJS on the backend  to build a BudgetApp. Login Authentication was implememted with JSON web token and also ReactJS register modal
-The APP was deployed via heroku
+
 
 
 ## Technologies
@@ -24,11 +24,11 @@ The APP was deployed via heroku
 * mongoos - version 5.9.3
 
 ## Setup
-IDE used was Visual Studio Code and project server side was first implemented on the localhost and later the client side.
+IDE used was Visual Studio Code. The application can run locally on localhost 3000. It is also currently deployed on github pages https://ogbeche77.github.io/youtube-clone/
 All necessary dependencies were installed, as seen in package.json
 
 ## Status
-Project is:completed & delopyed 
+Project is:completed 
 
 
 ## Contact
