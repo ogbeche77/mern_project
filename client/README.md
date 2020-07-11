@@ -24,7 +24,7 @@ MERN stack project using ReactJS, Redux, Reactstrap on the front end.  NodeJS & 
 * mongoos - version 5.9.3
 
 ## Setup
-IDE used was Visual Studio Code. The application can run locally on localhost 3000. It is also currently deployed on github pages https://ogbeche77.github.io/youtube-clone/
+IDE used was Visual Studio Code. The application can run locally on localhost 3000. It is also currently deployed on heroku https://my-player-manager.herokuapp.com/
 All necessary dependencies were installed, as seen in package.json
 
 ## Status
