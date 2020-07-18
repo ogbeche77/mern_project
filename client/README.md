@@ -5,6 +5,8 @@
 * [General info](#general-info)
 * [Technologies](#technologies)
 * [Setup](#setup)
+* [Status](#status)
+* [How to improve the project](#how-to-improve-the-project)
 * [Contact](#contact)
 
 ## General info
@@ -29,6 +31,15 @@ All necessary dependencies were installed, as seen in package.json
 
 ## Status
 Project is:completed 
+
+## How to improve the project
+* Star this repository
+* Fork this repository
+* Open any of the Javascriit file and add the explanation of any line of code as a comment line
+* Commit changes with a meaningful commit message 
+* Create a pull request.
+* Relax while your pull request is reviewed and merged.
+
 
 
 ## Contact
