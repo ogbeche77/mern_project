@@ -12,8 +12,6 @@
 ## General info
 MERN stack project using ReactJS, Redux, Reactstrap on the front end.  NodeJS & ExpressJS on the backend  to build a BudgetApp. Login Authentication was implememted with JSON web token and also ReactJS register modal
 
-
-
 ## Technologies
 * react - version 16.13.0
 * react-redux- version 7.2.0
@@ -39,7 +37,6 @@ Project is:completed
 * Commit changes with a meaningful commit message 
 * Create a pull request.
 * Relax while your pull request is reviewed and merged.
-
 
 
 ## Contact
