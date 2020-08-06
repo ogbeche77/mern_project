@@ -19,15 +19,18 @@ MERN stack project using ReactJS, Redux, Reactstrap on the front end. NodeJS & E
 
 ## Technologies
 
+- axios - version 0.19.2
+- bootstrap- version 4.4.1
+- cra-template - version 1.0.2
 - react - version 16.13.0
-- react-redux- version 7.2.0
-- react-transition-group - version 4.3.0
-- redux - version 4.0.5
+- react-dom - version 16.13.0
+- react-redux" - version 7.2.0
 - react-scripts - version 3.4.0
-- bootstrap" - version 4.4.1
-- concurrently - version 5.1.0
-- express - version 4.17.1
-- mongoos - version 5.9.3
+- react-transition-group - version 4.3.0
+- reactstrap - version 8.4.1
+- redux - version 4.0.5
+- redux-thunk - version 2.3.0
+- uuid - version 7.0.2
 
 ## Setup
 
