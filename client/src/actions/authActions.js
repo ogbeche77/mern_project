@@ -18,75 +18,75 @@ export const loadUser = () => (dispatch, getState) => { //bcos its asyncronous, 
     dispatch({ type: USER_LOADING });
 
     axios.get("/api/auth/user", tokenConfig(getState)) //fetch user
-    .then(res => dispatch({
-        type: USER_LOADED,
-        payload: res.data
-    }))
-    .catch(err=> {
-        dispatch(returnErrors(err.response.data, err.response.status));// returns the message & status
-        dispatch({
-            type: AUTH_ERROR
+        .then(res => dispatch({
+            type: USER_LOADED,
+            payload: res.data
+        }))
+        .catch(err => {
+            dispatch(returnErrors(err.response.data, err.response.status));// returns the message & status
+            dispatch({
+                type: AUTH_ERROR
+            });
         });
-    });
 }
 // Register User
-export const register =({ name, email,password}) => dispatch => {
-   
-   //Headers
+export const register = ({ name, email, password }) => dispatch => {
+
+    //Headers
     const config = { // json value to server
         headers: {
-            "Content-Type" : "application/json"
+            "Content-Type": "application/json"
         }
     }
 
     // Request body
-const body = JSON.stringify({ name, email, password }) // turn a javascript objaect to JSON
-axios.post("/api/users", body, config)
-.then(res => dispatch({
-    type: REGISTER_SUCCESS,
-    payload: res.data
-}))
-.catch(err => {
-    dispatch(returnErrors(err.response.data, err.response.status, "REGISTER_FAIL"));
-    dispatch({
-        type: REGISTER_FAIL
-    });
-});
+    const body = JSON.stringify({ name, email, password }) // turn a javascript objaect to JSON
+    axios.post("/api/users", body, config)
+        .then(res => dispatch({
+            type: REGISTER_SUCCESS,
+            payload: res.data
+        }))
+        .catch(err => {
+            dispatch(returnErrors(err.response.data, err.response.status, "REGISTER_FAIL"));
+            dispatch({
+                type: REGISTER_FAIL
+            });
+        });
 
 };
 
 // Login user
 // Register User
-export const login =({ email,password }) => dispatch => {
-   
+export const login = ({ email, password }) => dispatch => {
+
     //Headers
-     const config = {
-         headers: {
-             "Content-Type" : "application/json"
-         }
-     }
- 
-     // Request body
- const body = JSON.stringify({ email, password })
- axios.post("/api/auth", body, config)
- .then(res => dispatch({
-     type: LOGIN_SUCCESS,
-     payload: res.data
- }))
- .catch(err => {
-     dispatch(returnErrors(err.response.data, err.response.status, "LOGIN_FAIL"));
-     dispatch({
-         type: LOGIN_FAIL
-     });
- });
- 
- };
+    const config = {
+        headers: {
+            "Content-Type": "application/json"
+        }
+    }
+
+    // Request body
+    const body = JSON.stringify({ email, password })
+    axios.post("/api/auth", body, config)
+        .then(res => dispatch({
+            type: LOGIN_SUCCESS,
+            payload: res.data
+        }))
+        .catch(err => {
+            dispatch(returnErrors(err.response.data, err.response.status, "LOGIN_FAIL"));
+            dispatch({
+                type: LOGIN_FAIL
+            });
+        });
+
+};
 
 
 
 //Logout User
 export const logout = () => {
-    return{
+    return {
         type: LOGOUT_SUCCESS
     };
 };
@@ -95,19 +95,19 @@ export const logout = () => {
 //Setup config/headers and token
 export const tokenConfig = getState => {
     //Get token from localstorage
-const token = getState().auth.token;
+    const token = getState().auth.token;
 
-// Headers
-const config ={
-    headers: {
-        "Content-type": "application/json"
+    // Headers
+    const config = {
+        headers: {
+            "Content-type": "application/json"
+        }
     }
-}
 
-//If token, add to headers
-if(token) {
-    config.headers["x-auth-token"] = token; //set to token in local storage
-}
+    //If token, add to headers
+    if (token) {
+        config.headers["x-auth-token"] = token; //set to token in local storage
+    }
 
-return config;
+    return config;
 }
