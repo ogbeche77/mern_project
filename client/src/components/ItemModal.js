@@ -62,8 +62,8 @@ class ItemModal extends Component {
             Add Players
           </Button>
         ) : (
-          <h4 className="mb-3 ml-4"> Please login to manage team</h4>
-        )}
+            <h4 className="mb-3 ml-4"> Please login to manage team</h4>
+          )}
 
         <Modal isOpen={this.state.modal} toggle={this.toggle}>
           <ModalHeader toggle={this.toggle}>Add Players To List</ModalHeader>
