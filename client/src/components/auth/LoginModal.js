@@ -19,13 +19,13 @@ import { clearErrors } from '../../actions/errorActions';
 
 class LoginModal extends Component {
     state = {
-        modal: false, 
+        modal: false,
         email: '',
         password: '',
         msg: null
     };
 
-    static propTypes ={
+    static propTypes = {
         isAuthenticated: PropTypes.bool,
         error: PropTypes.object.isRequired,
         login: PropTypes.func.isRequired,
@@ -34,17 +34,17 @@ class LoginModal extends Component {
 
     componentDidUpdate(prevprops) {
         const { error, isAuthenticated } = this.props;
-        if(error !== prevprops.error) {
+        if (error !== prevprops.error) {
             //check for register error
-            if(error.id === "LOGIN_FAIL"){ //check for error of login fail
-                this.setState({ msg:error.msg.msg});
-            }else{
-                this.setState({ msg: null});
+            if (error.id === "LOGIN_FAIL") { //check for error of login fail
+                this.setState({ msg: error.msg.msg });
+            } else {
+                this.setState({ msg: null });
             }
         }
         //if authenticated, close modal
-        if(this.state.modal){
-            if(isAuthenticated) {
+        if (this.state.modal) {
+            if (isAuthenticated) {
                 this.toggle();
 
             }
@@ -60,70 +60,70 @@ class LoginModal extends Component {
     }
 
     onChange = (e) => {
-        this.setState({ [e.target.name] : e.target.value }); // name is setto whatever is types in
+        this.setState({ [e.target.name]: e.target.value }); // name is setto whatever is types in
     };
 
     onSubmit = e => {
         e.preventDefault(); // to prevent he actual form submitting
 
-const {email, password} = this.state; //email, password from component state
+        const { email, password } = this.state; //email, password from component state
 
-const user = {
-    email,
-    password
-}
-// Attempt to login
-this.props.login(user);
+        const user = {
+            email,
+            password
+        }
+        // Attempt to login
+        this.props.login(user);
 
- };
+    };
 
     render() {
-        return(
+        return (
             <div>
-            <NavLink onClick={this.toggle} href="#">
-            Login
+                <NavLink onClick={this.toggle} href="#">
+                    Login
             </NavLink>
-            <Modal
-            isOpen={this.state.modal}
-            toggle={this.toggle}
-            >
-            <ModalHeader toggle={this.toggle}>Login</ModalHeader>
-             <ModalBody>
-             { this.state.msg ? (<Alert color="danger">{ this.state.msg}</Alert>
-             ) : null}
-             <Form onSubmit={this.onSubmit}>
-             <FormGroup>
+                <Modal
+                    isOpen={this.state.modal}
+                    toggle={this.toggle}
+                >
+                    <ModalHeader toggle={this.toggle}>Login</ModalHeader>
+                    <ModalBody>
+                        {this.state.msg ? (<Alert color="danger">{this.state.msg}</Alert>
+                        ) : null}
+                        <Form onSubmit={this.onSubmit}>
+                            <FormGroup>
 
-             <Label for ="email">Email</Label>
-             <Input
-             type="email"
-             name="email"
-             id="email"
-             placeholder="Email"
-             className="mb-3"
-             onChange={this.onChange}
-             />
+                                <Label for="email">Email</Label>
+                                <Input
+                                    type="email"
+                                    name="email"
+                                    id="email"
+                                    placeholder="Email"
+                                    className="mb-3"
+                                    onChange={this.onChange}
+                                />
 
-             <Label for ="password">Password</Label>
-             <Input
-             type="password"
-             name="password"
-             id="password"
-             placeholder="Password"
-             className="mb-3"
-             onChange={this.onChange}
-             />
+                                <Label for="password">Password</Label>
+                                <Input
+                                    type="password"
+                                    name="password"
+                                    id="password"
+                                    placeholder="Password"
+                                    className="mb-3"
+                                    onChange={this.onChange}
+                                />
 
-             <Button
-             color= "dark"
-             style={{marginTop: "2rem"}}
-             block>
-             Login
+                                <Button
+                                    color="dark"
+                                    style={{ marginTop: "2rem" }}
+                                    block>
+                                    Login
              </Button>
-             </FormGroup>
-             </Form>
-             </ModalBody>
-            </Modal>
+                            </FormGroup>
+                        </Form>
+                    </ModalBody>
+                </Modal>
             </div>
         );
     }
@@ -131,7 +131,7 @@ this.props.login(user);
 }
 
 const mapStateToProps = state => ({
-    isAuthenticated:state.auth.isAuthenticated,
+    isAuthenticated: state.auth.isAuthenticated,
     error: state.error
 });
 

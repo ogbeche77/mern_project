@@ -11,24 +11,24 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
 class App extends Component {
-  componentDidMount(){
+  componentDidMount() {
     store.dispatch(loadUser());
   }
 
 
-  render(){
+  render() {
     return (
-      <Provider store ={store}>
-      <div className="App">
-      <AppNavbar />
-      <Container>
-      <ItemModal />
-      <ShoppingList />
-      </Container>
-      </div>
-     </Provider>
+      <Provider store={store}>
+        <div className="App">
+          <AppNavbar />
+          <Container>
+            <ItemModal />
+            <ShoppingList />
+          </Container>
+        </div>
+      </Provider>
     );
   }
 }
-  
+
 export default App;

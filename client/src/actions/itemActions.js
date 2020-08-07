@@ -6,38 +6,38 @@ import { returnErrors } from './errorActions';
 export const getItems = () => dispatch => {
     dispatch(setItemsLoading()); // calling setItemsLoading
     axios.get("/api/items")  //we make our request to the backend, proxy added already in package.json
-    .then(res =>
-         dispatch({  // response/ promise 
-             type: GET_ITEMS,
-             payload: res.data  //data that comes from the backend, when we hit the route so it returns json format
-         }))
-         .catch(err => dispatch(returnErrors(err.response.data, err.response.status))
-         );
-    };
+        .then(res =>
+            dispatch({  // response/ promise 
+                type: GET_ITEMS,
+                payload: res.data  //data that comes from the backend, when we hit the route so it returns json format
+            }))
+        .catch(err => dispatch(returnErrors(err.response.data, err.response.status))
+        );
+};
 
-    export const addItem = item => (dispatch, getState) =>{ //getState get passed to the token config
-       axios
-       .post("/api/items", item, tokenConfig(getState))
-       .then(res => 
-        dispatch({
-            type: ADD_ITEMS,
-            payload: res.data
+export const addItem = item => (dispatch, getState) => { //getState get passed to the token config
+    axios
+        .post("/api/items", item, tokenConfig(getState))
+        .then(res =>
+            dispatch({
+                type: ADD_ITEMS,
+                payload: res.data
 
-        })
+            })
         )
         .catch(err => dispatch(returnErrors(err.response.data, err.response.status))
-         );
-    };
+        );
+};
 
-export const deleteItems = id => (dispatch, getState) =>{ //getState get passed to the token config
-   axios.delete(`/api/items/${id}`, tokenConfig(getState)).then(res =>
-    dispatch({
-        type: DELETE_ITEMS,
-        payload: id
-    })
+export const deleteItems = id => (dispatch, getState) => { //getState get passed to the token config
+    axios.delete(`/api/items/${id}`, tokenConfig(getState)).then(res =>
+        dispatch({
+            type: DELETE_ITEMS,
+            payload: id
+        })
     )
-    .catch(err => dispatch(returnErrors(err.response.data, err.response.status))
-         );
+        .catch(err => dispatch(returnErrors(err.response.data, err.response.status))
+        );
 };
 
 export const setItemsLoading = () => {
