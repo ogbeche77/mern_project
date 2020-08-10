@@ -5,11 +5,11 @@ const Schema = mongoose.Schema; //creating schema
 const ItemSchema = new Schema({
     name: {
         type: String,
-        required:true
+        required: true
     },
     date: {
         type: Date,
-        default:Date.now
+        default: Date.now
     }
 });
 
