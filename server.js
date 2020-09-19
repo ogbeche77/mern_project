@@ -1,8 +1,8 @@
-const express =require("express");
-const mongoose =require("mongoose"); // Mongoose to interact with MONGODB database
+const express = require("express");
+const mongoose = require("mongoose"); // Mongoose to interact with MONGODB database
 const path = require("path");
 const config = require("config"); // To hide the MongoDB keys
-  
+
 
 const app = express(); // initialise express to var app
 
@@ -14,9 +14,9 @@ const db = config.get("mongoURI");
 
 //Connect to Mongo
 mongoose
-.connect(db, { useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex: true})
-.then(()=> console.log("MongoDB is connected")) //shows in terminal to show we are connected
-.catch(err => console.log(err));
+    .connect(db, { useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex: true })
+    .then(() => console.log("MongoDB is connected")) //shows in terminal to show we are connected
+    .catch(err => console.log(err));
 
 
 //Use Routes
@@ -27,7 +27,7 @@ app.use("/api/auth", require("./routes/api/auth"));   //ensures all requests her
 
 
 // Serve static assets if in production
-if(process.env.NODE_ENV ==="production") {
+if (process.env.NODE_ENV === "production") {
     //Set static folder
     app.use(express.static('client/build'));
 
@@ -41,4 +41,4 @@ if(process.env.NODE_ENV ==="production") {
 
 const port = process.env.PORT || 5000  //because we may deloy to heroku (process.env.port)
 
-app.listen(port, ()=> console.log(`Server started on port ${port}`));
+app.listen(port, () => console.log(`Server started on port ${port}`));
